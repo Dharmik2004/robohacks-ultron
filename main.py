@@ -18,7 +18,7 @@ imthereforu = ["Cheer up!",
   "Hang in there. There's something great coming",
   "You are a great person!",
   "Come on! You can do it!",
-  "I might be a evil bot, but I love you"
+  "I might be a evil bot, but I love you."
 ]
 
 def get_quote():
@@ -49,16 +49,6 @@ async def ping(ctx):
 
 
 
-
-async def kick(ctx, member : discord.Member):
-    try:
-        await member.kick(reason=None)
-        await ctx.send("kicked "+member.mention) #simple kick command to demonstrate how to get and use member mentions
-    except:
-        await ctx.send("bot does not have the kick members permission!")
-
-
-
 @client.event
 async def on_message(message):
 
@@ -81,9 +71,11 @@ async def on_message(message):
   if "sad" in string or "cry" in string or "suicide" in string or "die" in string or "depressed" in string:
     await message.channel.send(random.choice(imthereforu))
 
+  if "humans" in string or "improvement" in string or "earth" in string:
+    await message.channel.send("https://tenor.com/bh2iB.gif")
 
-
-
+  if "i m busy" in string or "busy" in string or "currently busy" in string or "busy now" in string:
+    await message.channel.send("https://tenor.com/bpqQs.gif")
 
 
 
