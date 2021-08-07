@@ -30,7 +30,17 @@ def get_quote():
 
 @client.event
 async def on_ready():
-    print("bot online") #will print "bot online" in the console when the bot is online
+
+  print("bot online") #will print "bot online" in the console when the bot is online
+  currentTime = time.strftime('%H:%M')   
+ # Setting `Playing ` status and 'Watching status'
+
+
+  await client.change_presence(activity=discord.Game(name="100 ways to End the world"))
+
+  await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Avengers: Age of Ultron"))
+
+
     
     
 @client.command()
