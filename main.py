@@ -21,6 +21,9 @@ imthereforu = ["Cheer up!",
   "I might be a evil bot, but I love you."
 ]
 
+
+
+
 def get_quote():
   response = requests.get("https://zenquotes.io/api/random")
   json_data = json.loads(response.text)
@@ -77,7 +80,10 @@ async def on_message(message):
   if "i m busy" in string or "busy" in string or "currently busy" in string or "busy now" in string:
     await message.channel.send("https://tenor.com/bpqQs.gif")
 
-
+  if "robot's suck" in string or "robots are bad" in string or "AI are dumb" in string or "Stupid bots" in string:
+    await message.channel.send(
+  
+    ) 
 
 
 
