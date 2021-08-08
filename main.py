@@ -86,7 +86,7 @@ async def on_message(message):
   if "humans" in string or "improvement" in string or "earth" in string:
     await message.channel.send("https://tenor.com/bh2iB.gif")
 
-  if "i m busy" in string or "busy" in string or "currently busy" in string or "busy now" in string:
+  if "i m busy" in string or "busy" in string or "currently busy" in string or "busy now" in string or "Do not disturb" in string or "DND" in string:
     await message.channel.send("https://tenor.com/bpqQs.gif")
 
   if "who" in string or "incoming" in string:
@@ -100,7 +100,10 @@ async def on_message(message):
   if "anger" in string:
     await message.add_reaction("😠")
 
-  if "AI" in string or "future" in string or "star" in string or "Olivia Rodrigo" in string:
+  if "future" in string:
+    await message.add_reaction("✨")
+
+  if "AI" in string or "star" in string or "Olivia" in string or "Rodrigo" in string:
     await message.add_reaction("✨")
 
 
@@ -139,6 +142,4 @@ async def on_message(message):
 
 
 
-client.run(os.getenv("TOKEN")) #get your bot token and create a key named `TOKEN` to the secrets panel then paste your bot token as the value. 
-#to keep your bot from shutting down use https://uptimerobot.com then create a https:// monitor and put the link to the website that appewars when you run this repl in the monitor and it will keep your bot alive by pinging the flask server
-#enjoy!
+client.run(os.getenv("TOKEN")) 
