@@ -6,7 +6,7 @@ import discord.ext
 from discord.utils import get
 from discord.ext import commands, tasks
 from discord.ext.commands import has_permissions,  CheckFailure, check
-
+import asyncio
 
 #^ basic imports for other features of discord.py and python ^
 
@@ -63,6 +63,10 @@ async def ping(ctx):
 
 bananaemojiid = ":859841434608730132:"
 
+
+
+
+
 @client.event
 async def on_message(message):
   if message.author == client.user:
@@ -73,8 +77,7 @@ async def on_message(message):
    
   string = "".join(message.content.lower().split())
 
-
-  if "robot" in string or "tron" in string or "ultron" in string:
+  if "robot" in string or "tron" in string or "ultron" in string or "bot" in string:
     await message.add_reaction("🤖")
 
   if "sad" in string or "cry" in string or "suicide" in string or "die" in string or "depressed" in string:
@@ -86,10 +89,16 @@ async def on_message(message):
   if "i m busy" in string or "busy" in string or "currently busy" in string or "busy now" in string:
     await message.channel.send("https://tenor.com/bpqQs.gif")
 
-  if "robot's suck" in string or "robots are bad" in string or "AI are dumb" in string or "Stupid bots" in string:
-    await message.channel.send(
-  
-    ) 
+
+  if "love" in string or "crush" in string:
+    await message.add_reaction("❤️")
+
+  if "anger" in string:
+    await message.add_reaction("😠")
+
+  if "AI" in string or "future" in string or "star" in string or "Olivia Rodrigo" in string:
+    await message.add_reaction("✨")
+
 
   if "banana" in string:
     emoji = discord.utils.get(client.emojis, name='859841434608730132')
@@ -97,11 +106,8 @@ async def on_message(message):
 
 
 
-  if "ultron" in string or "ultronbot" in string or "ultron-bot" in string or "bot" in string:
+  if "ultron" in string or "ultron-bot" in string or "bot" in string:
     await message.channel.send(random.choice(randomreplies))
-
-
-
 
 
 
