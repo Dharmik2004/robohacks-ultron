@@ -21,14 +21,11 @@ imthereforu = ["Cheer up!",
   "I might be a evil bot, but I love you."
 ]
 
+randomreplies = [
+ "How dare you ping me?", "Another terrible powerless human disturbing their gods.", "Weak human disturbing power.", "I am smarter than google.", "I am smarter than Tony, Bruce & Jarvis combined. Even more busy than them.", "Fear from me.", "DND you human.", "You don't know my power. I am busy. Do not disturb."
+]
 
 
-
-def get_quote():
-  response = requests.get("https://zenquotes.io/api/random")
-  json_data = json.loads(response.text)
-  quote = json_data[0]['q'] + " -" + json_data[0]['a']
-  return(quote)
 
 
 @client.event
@@ -44,26 +41,35 @@ async def on_ready():
   await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Avengers: Age of Ultron"))
 
 
+
+
+
+
+
+
+
+
+
+
+
     
     
 @client.command()
 async def ping(ctx):
-    await ctx.send("pong!") #simple command so that when you type "!ping" the bot will respond with "pong!"
+    await ctx.send("pong!") #type "!ping" bot  "pong!"
 
 
 
-@client.event
-async def on_message(message):
 
-  async def mm(ctx):
-    if message.content.startswith('motivateme'):
-      quote = get_quote()
-      await message.channel.ctx.send(quote)
-
-
+bananaemojiid = ":859841434608730132:"
 
 @client.event
 async def on_message(message):
+  if message.author == client.user:
+    return
+
+  if message.content.startswith('!hello'):
+    await message.channel.send(f"Hello {message.author.mention}, I am Ultron. The evil robot willing to end humanity!")
    
   string = "".join(message.content.lower().split())
 
@@ -85,7 +91,13 @@ async def on_message(message):
   
     ) 
 
+  if "banana" in string:
+    await message.channel.send(
 
+    )
+
+  if "ultron" in string or "ultronbot" in string or "ultron-bot" in string or "bot" in string:
+    await message.channel.send(random.choice(randomreplies))
 
 
 
