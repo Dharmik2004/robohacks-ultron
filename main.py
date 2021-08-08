@@ -92,9 +92,10 @@ async def on_message(message):
     ) 
 
   if "banana" in string:
-    await message.channel.send(
+    emoji = discord.utils.get(client.emojis, name='859841434608730132')
+    await message.channel.send(str(emoji))
 
-    )
+
 
   if "ultron" in string or "ultronbot" in string or "ultron-bot" in string or "bot" in string:
     await message.channel.send(random.choice(randomreplies))
