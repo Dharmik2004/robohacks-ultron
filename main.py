@@ -89,6 +89,10 @@ async def on_message(message):
   if "i m busy" in string or "busy" in string or "currently busy" in string or "busy now" in string:
     await message.channel.send("https://tenor.com/bpqQs.gif")
 
+  if "who" in string or "incoming" in string:
+    await message.channel.send("https://tenor.com/5B60.gif")
+
+
 
   if "love" in string or "crush" in string:
     await message.add_reaction("❤️")
